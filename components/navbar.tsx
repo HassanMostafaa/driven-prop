@@ -25,27 +25,32 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <Link href="/" className="flex items-center gap-2 font-bold">
-          <Building2 className="h-6 w-6" />
-          <span className="hidden sm:inline-block">Driven Prop</span>
-        </Link>
-        <nav className="hidden md:ml-12 md:flex md:gap-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-        <div className="ml-auto flex items-center gap-4">
+      <div className="mx-auto container flex h-16 items-center justify-between">
+        <div className="flex items-center gap-6 md:gap-8">
+          <Link href="/" className="flex items-center gap-2 font-bold">
+            <Building2 className="h-6 w-6" />
+            <span className="hidden sm:inline-block">Driven Prop</span>
+          </Link>
+          <nav className="hidden md:flex">
+            <ul className="flex gap-6">
+              {navigation.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                      pathname === item.href
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div className="flex items-center gap-4">
           <Button variant="outline" className="hidden sm:inline-flex">
             List Property
           </Button>

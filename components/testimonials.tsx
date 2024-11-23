@@ -34,7 +34,7 @@ export function Testimonials() {
             What Our Clients Say
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Don't just take our word for it - hear from our satisfied clients
+            Do not just take our word for it - hear from our satisfied clients
           </p>
         </div>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
